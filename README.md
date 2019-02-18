@@ -1,0 +1,1 @@
+Since I have recently finished the beginner Django tutorial, I am attempting to create a gradebook app that any teacher could use to input children's grades. If I can build it out to be more robust and have the admin interface behave as it would if a principal would like to see all the grades several teachers are inputting I may do that as well.
