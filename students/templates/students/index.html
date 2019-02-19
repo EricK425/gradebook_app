@@ -2,12 +2,24 @@
 <link rel="stylesheet" type="text/css" href="{% static 'students/style.css' %}">
 {% if all_students %}
 <h1>Current Students</h1>
-    <ul>
-    {% for student in all_students %}
-        {# piping lower with |lower enables the lower function to be called on the string object #}
-        <li><a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/">{{ student.first_name }} {{ student.last_name }}</a></li>
-    {% endfor %}
-    </ul>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Average</th>
+  </tr>
+
+  {% for student in all_students %}
+  <tr>
+    {# piping lower with |lower enables the lower function to be called on the string object #}
+    <a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/"></a>
+    <td><a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/">{{ student.first_name }}</a></td>
+    <td><a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/">{{ student.last_name }}</a></td>
+    <td><a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/">{{ student.grade }}</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
 {% else %}
     <p>No students enrolled yet.</p>
 {% endif %}
