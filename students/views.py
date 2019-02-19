@@ -14,7 +14,7 @@ def index(request):
     return HttpResponse(template.render(context,request))
 
 def detail(request, student_first_name, student_last_name):
-    return HttpResponse("Student details for %s %s:" %(student_first_name, student_last_name))
+    return HttpResponse("Student details for %s %s:" %(student_first_name.title(), student_last_name.title()))
 
 def update(request, student_first_name, student_last_name):
     return HttpResponse("Update student details for %s %s:" %(student_first_name, student_last_name))
