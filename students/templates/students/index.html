@@ -1,0 +1,9 @@
+{% if all_students %}
+    <ul>
+    {% for student in all_students %}
+        <li><a href="/students/{{ student.first_name }}/{{ student.last_name }}/">{{ student.first_name }} {{ student.last_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No students enrolled yet.</p>
+{% endif %}
