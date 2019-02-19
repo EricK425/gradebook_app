@@ -1,6 +1,10 @@
 ul {
   list-style: none;
-  margin: none;
+  padding: 0px;
+}
+
+h1 {
+  color: royalblue;
 }
 
 li a {

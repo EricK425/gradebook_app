@@ -1,6 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'students/style.css' %}">
 {% if all_students %}
+<h1>Current Students</h1>
     <ul>
     {% for student in all_students %}
         {# piping lower with |lower enables the lower function to be called on the string object #}
