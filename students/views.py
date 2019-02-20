@@ -1,6 +1,5 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import get_object_or_404, render
 
 from .models import Student
 
@@ -13,7 +12,8 @@ def index(request):
     return render(request, 'students/index.html', context)
 
 def detail(request, student_first_name, student_last_name):
-    return HttpResponse("Student details for %s %s:" %(student_first_name.title(), student_last_name.title()))
+    student = get_object_or_404(Student,first_name = student_first_name.title(), last_name = student_last_name.title())
+    return render(request, 'students/detail.html', {'student': student})
 
 def update(request, student_first_name, student_last_name):
-    return HttpResponse("Update student details for %s %s:" %(student_first_name, student_last_name))
+    return HttpResponse("Update student details for %s %s:" %(student_first_name.title(), student_last_name.title()))
