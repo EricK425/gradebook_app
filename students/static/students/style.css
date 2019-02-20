@@ -3,11 +3,21 @@ ul {
   padding: 0px;
 }
 
-h1 {
+h1,
+h2 {
   color: royalblue;
 }
 
 table a {
   color: royalblue;
   text-decoration: none;
+}
+
+p a {
+  color: green;
+  text-decoration: overline;
+}
+
+p a:visited {
+  color: green;
 }

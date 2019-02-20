@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'students/style.css' %}">
+<link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}">
 {% if student %}
   {# Make all h2 headings pull from database table columns instead of this ugly hack #}
   <h2>First Name</h2>
@@ -6,5 +9,5 @@
   <p>{{ student.last_name }}</p>
   <h2>Average</h2>
   <p>{{ student.grade }}</p>
-  <p><a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/update/">Update Student</a></p>
+  <p><a href="/students/{{ student.first_name|lower }}/{{ student.last_name|lower }}/update/">Update Student Info</a></p>
 {% endif %}
